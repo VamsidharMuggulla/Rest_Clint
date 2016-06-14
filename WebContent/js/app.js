@@ -2,8 +2,14 @@
 
 	var app=angular.module('Contacts',[]);
 	
-	app.controller('ContactsController', function(){
+	app.controller('ContactsController', function($http){
 	    var cont = this;
+	    $http.get('http://localhost:8080/RestClint/handlethose/peoples/contacts/get')
+	    .success(function(response) {
+	    	cont.contact=response;
+	       console.log(response);	
+	    });
+	   /*
 	    cont.contact=[
 	           	  {
 	           	    "name": "Santa",
@@ -23,7 +29,7 @@
 	           	  }
 	           	];
 
-	    
+*/	    
 	  });
 	app.controller('ContactAddController',function() {
 		
