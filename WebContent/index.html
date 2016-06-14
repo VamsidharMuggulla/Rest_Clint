@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html ng-app="Contacts">
 <head>
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/main.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css" />
-<title>
-REST Clint
-</title>
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<title>REST Clint</title>
 </head>
 <body ng-controller="ContactsController as contact">
 
-<div class="container">
-<h1>Contacts <!-- <button href class="btn btn-info">Load</button> -->
- </h1>
+	<div class="container">
+		<h1>
+			Contacts
+			<!-- <button href class="btn btn-info">Load</button> -->
+		</h1>
 
 
 
 
-<div class="container alert-success">
-<br>
- <form class="form-inline" name="contactForm" ng-controller="ContactAddController as conCtrl" ng-submit="conCtrl.addContact(contact.contact)" style="display : inline; float:left">
-<input id="namee" ng-model="conCtrl.con.name" type="text" class="form-control input-sm" placeholder="Name" />
-<input id="numbere" ng-model="conCtrl.con.number" type="text" class="form-control input-sm" placeholder="Number" />  
- <button type="submit" class="btn btn-success">&nbsp;Add&nbsp;</button>&nbsp;
- </form>
- <form style="display : inline; float:left" class="form-inline" name="contacForm" ng-controller="UpdateController as upCtrl" ng-submit="upCtrl.updateContact(contact.contact)">
- <button class="btn btn-info"type="submit">Update</button> &nbsp;
- </form>
- <form style="display : inline; float:left" class="form-inline" name="del" ng-controller="DeleteController as deleteCtrl" ng-submit="deleteCtrl.deleteContact(contact.contact)"> 
-		<button type="submit" class="btn btn-danger">Delete</button>
-		</form>  
+		<div class="container alert-success">
+			<br>
+			<form class="form-inline" name="contactForm"
+				ng-controller="ContactAddController as conCtrl"
+				ng-submit="conCtrl.addContact(contact.contact)"
+				style="display: inline; float: left">
+				<input id="namee" ng-model="conCtrl.con.name" type="text"
+					class="form-control input-sm" placeholder="Name" /> <input
+					id="numbere" ng-model="conCtrl.con.number" type="text"
+					class="form-control input-sm" placeholder="Number" />
+				<button type="submit" class="btn btn-success">&nbsp;Add&nbsp;</button>
+				&nbsp;
+			</form>
+			<form style="display: inline; float: left" class="form-inline"
+				name="contacForm" ng-controller="UpdateController as upCtrl"
+				ng-submit="upCtrl.updateContact(contact.contact)">
+				<button class="btn btn-info" type="submit">Update</button>
+				&nbsp;
+			</form>
+			<form style="display: inline; float: left" class="form-inline"
+				name="del" ng-controller="DeleteController as deleteCtrl"
+				ng-submit="deleteCtrl.deleteContact(contact.contact)">
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
 
-</div>
+		</div>
 
-<div class="container alert-info" ng-repeat="cntact in contact.contact">
+		<div class="container alert-info"
+			ng-repeat="cntact in contact.contact">
 
-<br>
-<!-- <form name="up" ng-controller="UpdateController as updateCtrl" ng-submit="updateCtrl.updateContact(contact.contact)"> -->
+			<br>
+			<!-- <form name="up" ng-controller="UpdateController as updateCtrl" ng-submit="updateCtrl.updateContact(contact.contact)"> -->
 
-<div id="name"><h3>{{cntact.name}}</h3></div><div id="number">  {{cntact.number}}</div>
-
-
-<!--   <input type="text" class="form-control input-sm"  ng-model="updateCtrl.con.name" ng-value="{{cntact.name}}" /> -->
-<!-- <input type="text" class="form-control input-sm"  ng-model="updateCtrl.con.number" ng-value="{{cntact.number}}" /> -->  
- <!-- <button type="submit" class="btn btn-success">Update</button>--> </form> 
-<!-- <form name="del" ng-controller="DeleteController as deleteCtrl" ng-submit="deleteCtrl.deleteContact(contact.contact)"> -->
-		<!-- <input type="text" class="form-control input-sm"  ng-model="deleteCtrl.con.number" ng-value="{{cntact.number}}" /> -->
- 			
- </form>
-</div>
+			<div id="name">
+				<h3>{{cntact.name}}</h3>
+			</div>
+			<div id="number">{{cntact.number}}</div>
 
 
-</div>
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
+			<!--   <input type="text" class="form-control input-sm"  ng-model="updateCtrl.con.name" ng-value="{{cntact.name}}" /> -->
+			<!-- <input type="text" class="form-control input-sm"  ng-model="updateCtrl.con.number" ng-value="{{cntact.number}}" /> -->
+			<!-- <button type="submit" class="btn btn-success">Update</button>-->
+			</form>
+			<!-- <form name="del" ng-controller="DeleteController as deleteCtrl" ng-submit="deleteCtrl.deleteContact(contact.contact)"> -->
+			<!-- <input type="text" class="form-control input-sm"  ng-model="deleteCtrl.con.number" ng-value="{{cntact.number}}" /> -->
+
+			</form>
+		</div>
+
+
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
 
